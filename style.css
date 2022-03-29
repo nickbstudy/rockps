@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    border: 2px solid black;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+#buttons {
+    margin: 27px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    border: none;
+}
+
+.sides {
+    width: 50%;
+    height: 100vh;
+}
+
+button {
+    width: 25%;
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    background-color: #660000;
+    color: white;
+}
+
+#outcomes {
+    font-family: 'Roboto Mono', monospace;
+}

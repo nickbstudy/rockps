@@ -1,5 +1,3 @@
-let message = "Rock, Paper, or Scissors?"
-
 function computerPlay() {
     let choice = Math.floor(Math.random()*3);
     if (choice == 1) {
@@ -67,25 +65,6 @@ function didCompWin(playerSel, computerSel) {
 
 function getInput() {
 
-        //check if player entered a valid choice
-    // if (playerChoice.toLowerCase() == "rock") {
-    //     message = "Rock, Paper, or Scissors?"
-    //     console.log('made it to rock')
-    //     return 'rock'
-    // } else if (playerChoice.toLowerCase() == "scissors") {
-    //     message = "Rock, Paper, or Scissors?"
-    //     console.log('made it to sci')
-    //     return 'scissors'
-    // } else if (playerChoice.toLowerCase() == "paper") {
-    //     message = "Rock, Paper, or Scissors?"
-    //     console.log('made it to pap')
-    //     return 'paper'
-    // }  else {
-    //     message = "You have entered an invalid choice, try again - rock paper or scissors"
-    //     getInput()
-    // }
-
-
     // get players input
     let inp = prompt("Enter your choice - R for Rock, P for Paper, or S for Scissors")
     inp = inp.toLowerCase()
@@ -102,11 +81,6 @@ function getInput() {
         return 'scissors'
     }
 
-
-
-    // if it's none then keep checking with a different message
-    
-
 }
 
 function game() {
@@ -118,7 +92,7 @@ function game() {
          {
             let playersItem = getInput()
             let compsItem = computerPlay()
-            console.log(`player has ${playersItem} to the pc ${compsItem}`)
+            console.log(`player has ${playersItem} to the pc ${compsItem.toLowerCase()}`)
             
             //print result
             console.log(playRound(playersItem, compsItem))
@@ -136,4 +110,4 @@ function game() {
     }
 }
 
-game()
+// game()
