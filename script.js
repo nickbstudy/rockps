@@ -12,6 +12,7 @@ function computerPlay() {
 function playRound(playerSel, computerSel) {
     
     let playerLow = playerSel.toLowerCase()
+    
     let compLow = computerSel.toLowerCase()
 
     if (playerLow == 'rock') {
@@ -63,51 +64,46 @@ function didCompWin(playerSel, computerSel) {
 
 }
 
-function getInput() {
 
-    // get players input
-    let inp = prompt("Enter your choice - R for Rock, P for Paper, or S for Scissors")
-    inp = inp.toLowerCase()
-    // check if it's R P or S
-    while(inp != 'r' && inp != 'p' && inp != 's') {
-        inp = prompt("Try again - r p or s")
-    }
+const writeHere = document.querySelector('#events');
+const scores = document.querySelector('#scores')
+let outcomeText = "";
+let playerScore = 0;
+let compScore = 0;
+let winner = 0;
 
-    if (inp == "r") {
-        return 'rock'
-    } else if (inp == "p") {
-        return 'paper'
-    } else if (inp == "s") {
-        return 'scissors'
-    }
-
-}
-
-function game() {
-
-    let playerScore = 0
-    let compScore = 0
-    
-    for (let i = 0; i < 5; i++) {
-         {
-            let playersItem = getInput()
-            let compsItem = computerPlay()
-            console.log(`player has ${playersItem} to the pc ${compsItem.toLowerCase()}`)
-            
-            //print result
-            console.log(playRound(playersItem, compsItem))
-
-            //update scores
-            let comp = didCompWin(playersItem, compsItem)
-            if (comp == 1) {
-                compScore++
-            } else if (comp == 0) playerScore++
-
-            console.log(`Scores are: player ${playerScore} - pc ${compScore}`)
-        }
-
+document.addEventListener('click', (e) => {
+    let compChoice = computerPlay();
+    switch(e.target.id) {
+        case 'rock':
+            outcomeText += `\r\n${playRound(e.target.id, compChoice)}`
+            winner = didCompWin(e.target.id, compChoice);
+            if (winner == 0) {
+                playerScore++;
+            } else if (winner == 1) {
+                compScore++;
+            }
+            break;
+        case 'paper':
+            outcomeText += `\r\n${playRound(e.target.id, compChoice)}`
+            winner = didCompWin(e.target.id, compChoice);
+            if (winner == 0) {
+                playerScore++;
+            } else if (winner == 1) {
+                compScore++;
+            }
+            break;
+        case 'scissors':
+            outcomeText += `\r\n${playRound(e.target.id, compChoice)}`
+            winner = didCompWin(e.target.id, compChoice);
+            if (winner == 0) {
+                playerScore++;
+            } else if (winner == 1) {
+                compScore++;
+            }
+            break;
         
     }
-}
-
-// game()
+    writeHere.textContent = outcomeText
+    scores.textContent = `Player: ${playerScore}  -  Site: ${compScore}`
+});

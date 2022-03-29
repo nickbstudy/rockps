@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,21 +13,21 @@
 </head>
 <body>
     <div id="container">
-        <div class="sides">
+        <div class="sides" id="leftSide">
             <div  id="buttons">
                 <button id="rock">Rock</button>
                 <button id="paper">Paper</button>
                 <button id="scissors">Scissors</button>
             </div>
+            <div id="scores">
+                Player: 0   -  Site: 0
+            </div>
         </div>
         <div class="sides">
             <div id="outcomes">
-                <p>Outcomes here</p>
-                <p>Outcomes here</p>
-                <p>Outcomes here</p>
-                <p>Outcomes here</p>
-                <p>Outcomes here</p>
-                <p>Outcomes here</p>
+                <h2>Game events</h2>
+                <div id="events"></div>
+               
             </div>
         </div>
     </div>

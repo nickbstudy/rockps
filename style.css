@@ -5,7 +5,8 @@ body {
 }
 
 div {
-    border: 2px solid black;
+    white-space: pre-line;
+    /* border: 1px solid black; */
 }
 
 #container {
@@ -13,11 +14,34 @@ div {
     flex-direction: row;
 }
 
+#leftSide {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid black;
+    flex-direction: column;
+}
+
 #buttons {
-    margin: 27px 10px;
+    margin: 20vh auto auto;
+    
     display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 40vw;
+    /* padding: vh 0; */
+    align-items: center;
     justify-content: space-evenly;
-    border: none;
+    /* border: none; */
+    order: 1;
+}
+
+#scores {
+    margin: auto auto 15vh;
+    font-size: 2em;
+    order: 2;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
 }
 
 .sides {
@@ -26,14 +50,22 @@ div {
 }
 
 button {
-    width: 25%;
+    width: 15vw;
     padding: 5px;
+    font-size: 1.6em;
     border-radius: 8px;
-    border: none;
-    background-color: #660000;
+    /* border: 2px solid #012b00; */
+    background-color: #026600;
     color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
 }
 
 #outcomes {
+    margin-left: 2vw;
     font-family: 'Roboto Mono', monospace;
 }
