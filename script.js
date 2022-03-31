@@ -72,7 +72,7 @@ let playerScore = 0;
 let compScore = 0;
 let winner = 0;
 
-document.addEventListener('click', (e) => {
+function processClick(e) {
     let compChoice = computerPlay();
     switch(e.target.id) {
         case 'rock':
@@ -106,4 +106,11 @@ document.addEventListener('click', (e) => {
     }
     writeHere.textContent = outcomeText
     scores.textContent = `Player: ${playerScore}  -  Site: ${compScore}`
-});
+    if (playerScore == 5 || compScore == 5) {
+        document.removeEventListener('click', processClick);
+        (playerScore == 5) ? alert("You win!") : alert("You lose.");
+        
+    }
+}
+
+document.addEventListener('click', processClick);
